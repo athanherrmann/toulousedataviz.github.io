@@ -6,5 +6,9 @@ Mais avec les limitations CORS !!!
 
 Fonctionnel avec Observable sous Chrome.
 
-A essayer: 
-https://raw.githubusercontent.com/toulousedataviz/project/master/file)
+## Mais la limite CORS peut être levée en pointant !!!
+
+https://raw.githubusercontent.com/toulousedataviz/toulousedataviz.github.io/master/flux_distance_global.csv
+
+Cool is not it ?
+Donc fonctionnel en Firefox
