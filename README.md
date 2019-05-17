@@ -5,3 +5,6 @@ Il suffit de pointer: toulousedataviz.github.io/nomdefichier pour récupérer le
 Mais avec les limitations CORS !!!
 
 Fonctionnel avec Observable sous Chrome.
+
+A essayer: 
+https://raw.githubusercontent.com/toulousedataviz/project/master/file)
