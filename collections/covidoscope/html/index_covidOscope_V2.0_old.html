@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>covidOscope  V2.0 Avril 2020</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="covid-19, france, pandémie">
+<script   src="https://code.jquery.com/jquery-2.2.1.min.js"  integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="  crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style_covidoscope.css">
+
+
+<body>
+
+
+<!-- Titre le covidoscope-->
+<div class='container event-lp-calendar-image' style="font: 9px sans-serif; background-color: #fff">
+	<div class="panel-body" style="font-size:40px; text-align: center; background-color: #e6d7a8; color:rgb(241, 10, 10);"  ><strong>Le Covid<img src="http://datasens.fr/covidoscope/covid_virus_image_2.png" alt="logo" height="60" width="60">scope<br></strong></div>
+
+	<!--Banner-->
+	<div class="banner">
+	  <div class="bg-color">
+		<div class="container">
+		  <div class="row">
+			<div class="banner-text text-center">
+			  <div>
+				<h2 class="text-dec">Suivez l'évolution de la pandémie dans les départements de France</h2>
+				<h2 style="font-size:14px"> En visualisant les données hospitalières </h2>
+			  </div>
+			  <!-- modal -->
+				<div class='row '>
+					<div class="col-md-offset-4 col-md-1 text-center">
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#fonctionnement">Fonctionnement</button>
+						<div class="modal fade bd-example-modal-lg" id="fonctionnement" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+						  <div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+									  <button type="button" class="close" data-dismiss="modal">&times;</button>
+									  <h2 class="modal-title" style="color: #000; font-size: 20px;" >FONCTIONNEMENT</h2>
+									</div>
+									<div class="modal-body"  >
+										<p  style="color: #000; font-size: 12px; text-align : left">
+											&bull; Utilisez le sélecteur pour choisir l'indicateur, le sexe et l'echelle des graphiques. <br>
+											&bull; Placez le curseur de la souris sur les barres pour visualiser l'info-bulle. <br>
+											&bull; Naviguez et zoomer sur la carte en utilisant la souris . <br>
+											<br><br>
+										</p>
+									</div>
+									<div class="modal-footer">
+									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div> 
+						  </div>
+						</div>
+					</div>
+
+					<div class="col-md-offset-1 col-md-2 text-center">
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#informations">Informations</button>
+						<div class="modal fade bd-example-modal-lg" id="informations" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+						  <div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+									  <button type="button" class="close" data-dismiss="modal">&times;</button>
+									  <h2 class="modal-title" style="color: #000; font-size: 20px;">INFORMATIONS</h2>
+									</div>
+									<div class="modal-body">
+										<p  style="color: #000; font-size: 12px; text-align : left">
+                                            Suivi de l'évolution de la pandémie de COVID-19 en France métropolitaine<br><br>
+                                            &bull; Nombre cumulé de personnes décédées pour COVID-19 depuis le 1er mars 2020.<br><br>
+											&bull; Nombre de personnes actuellement hospitalisées pour COVID-19.<br><br>
+											&bull; Nombre de personnes actuellement en réanimation ou soins intensifs pour COVID-19.<br><br>
+											&bull; Nombre cumulé de personnes retournées à domicile.<br><br>
+											Source des données <a href="https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/#_" target="_blank"> Santé publique France </a>Santé publique France <br><br>	
+											Réalisation A Ottenheimer - <a href="http://datasens.fr" target="_blank"> datasens.fr </a> avec le support d'Alain Roan - <a href="https://perceptible.fr"> perceptible.fr </a> avril 2020<br><br>
+											licence <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank"> MIT </a> - Avril 2020
+												
+									</div>
+									<div class="modal-footer">
+									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div> 
+						  </div>
+						</div>
+					</div>
+				  </div>		  
+			 </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<!-- Selecteurs -->
+	<div class='row '>	
+			<!-- Selecteur indicateur -->
+			<div class="col-md-3">
+				<div class="panel-body" style="background-color:  #e6d7a8; "  >
+					<div class="col-md-12"  style="color: #000; font-size: 14px;" id =select_Encoding> </div>
+				</div>			
+			</div>
+		
+			<!--Selecteur genre -->
+			<div class="col-md-offset-0 col-md-3">
+				<div class="panel-body" style="background-color: #e6d7a8; "  >
+					<div class="col-md-12 text-center" style="color: #000; font-size: 14px;" id =genre></div>
+				</div>
+			</div>
+
+
+
+			<!--Selecteur echelle -->
+			<div class="col-md-offset-0 col-md-6">
+				<div class="panel-body" style="background-color: #e6d7a8; "  >
+					<div class="col-md-12 text-center" style="color: #000; font-size: 14px;" id =select_scale></div>
+				</div>
+			</div>
+
+			<!--Selecteur bgCcolor -->
+			<!--
+			<div class="col-md-offset-1 col-md-3">
+				<div class="panel-body" style="background-color:  #e6d7a8; "  >
+					<div class="col-md-12 text-center" style="color: #000; font-size: 14px;" id =select_bgColor></div>
+				</div>
+			</div>
+			-->
+	</div>
+
+	<!-- Graphique -->
+	<div class='row '>
+		<div class="col-md-12"  id =chart> </div>
+		<div class="col-md-12"  id =titre> </div>	
+	<p>&nbsp;</p>
+	
+	<!-- legende -->
+	</div>
+	<div class='row '>
+		<div class="col-md-12" id =legend></div>
+	</div>	
+	
+
+</div>
+
+<script type="module">
+
+// gestion des fenêtres modal 
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+
+// Chargement des celulles observablehq
+import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime?module";
+import notebook from "https://api.observablehq.com/d/588547f94eeaee4a.js";
+
+const notebookCellsToRender = {
+ "viewof selectedEncoding": "#select_Encoding",
+ //"viewof bgColor" : "#select_bgColor", 
+ //"viewof textColor" : "#select_textColor ",
+ //"viewof selectedRamp" : "#select_rampColor",
+ "viewof genre" : "#genre",
+ "legend": "#legend",
+ "titre": "#titre",
+ "chart": "#chart",
+ "viewof select_scale" : "#select_scale"
+
+};
+
+Runtime.load(notebook, (cell) => {
+
+  const selector = notebookCellsToRender[cell.name];
+
+  if (selector) {
+    return new Inspector(document.querySelector(selector));
+  } else {
+    return true;
+  }
+});
+
+// licence MIT
+</script>
+</body>
