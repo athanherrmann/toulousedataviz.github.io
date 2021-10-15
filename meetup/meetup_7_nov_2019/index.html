@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>meetup_7_nov_2019</title>
+<meta charset="utf-8">
+
+<style>
+
+body {
+ background-color: #ddd;
+ }
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+.grid path {
+  stroke-width: 0;
+}
+
+.area {							
+  fill: url(#area-gradient);					
+  stroke-width: 0px;			
+}
+p {text-align: center }
+
+</style>
+
+<body>
+<div  id =chart2 align="center"></div>
+<div  id =selectedVille align="center"></div>
+<div  id =temp_chart align="center"></div>
+<p>&nbsp;</p>
+<div> <p> Alain Ottenheimer - <a href="http://datasens.fr" target="_blank"> datasens.fr </a>  meetup TDV 7 nov 2019 - licence <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank"> MIT </a> - nov 2019</p></div>
+
+<script type="module">
+
+
+// Chargement des celulles observablehq
+import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime?module";
+import notebook from "https://api.observablehq.com/d/07fb2b74cce4ef01.js";
+
+
+const notebookCellsToRender = {
+  "viewof selectedVille": "#selectedVille",
+  "temp_chart": "#temp_chart",
+  "chart2" : "#chart2"
+};
+
+Runtime.load(notebook, (cell) => {
+
+  const selector = notebookCellsToRender[cell.name];
+
+  if (selector) {
+    return new Inspector(document.querySelector(selector));
+  } else {
+    return true;
+  }
+});
+
+
+</script>
+</body>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>PolitOscope V1.4.1 9-oct-2019</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="élection, france, résultats, européennes , présidentielles">
+<script   src="https://code.jquery.com/jquery-2.2.1.min.js"  integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="  crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style_politoscope.css">
+
+
+<body>
+<!-- Titre le politoscope-->
+<div class='container event-lp-calendar-image' style="font: 9px sans-serif; background-color: #fff">
+	<div class="panel-body" style="font-size:40px; text-align: center; background-color: #85d6d2; color:rgb(241, 10, 10);"  ><strong>Le Polit<img src="http://toulouse-dataviz.fr/observablehq/2009_circle.png" alt="logo" height="60" width="60">scope <br></strong></div>
+
+	<!--Banner-->
+	<div class="banner">
+	  <div class="bg-color">
+		<div class="container">
+		  <div class="row">
+			<div class="banner-text text-center">
+			  <div>
+				<h2 class="text-dec">Découvrez l'évolution du vote des Français sur la période 1999 - 2019</h2>
+				<h2 style="font-size:14px"> En visualisant les résultats des élections Européennes et Présidentielles de toutes les communes de la France métropolitaine</h2>
+			  </div>
+			  <!-- modal -->
+				<div class='row '>
+					<div class="col-md-offset-4 col-md-1 text-center">
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#fonctionnement">Fonctionnement</button>
+						<div class="modal fade bd-example-modal-lg" id="fonctionnement" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+						  <div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+									  <button type="button" class="close" data-dismiss="modal">&times;</button>
+									  <h2 class="modal-title" style="color: #000; font-size: 20px;" >FONCTIONNEMENT</h2>
+									</div>
+									<div class="modal-body"  >
+										<p  style="color: #000; font-size: 12px; text-align : left">
+											Les résultats des élections sont visualisés sur une carte et un graphique à barres.<br><br>
+											&bull; Utilisez le sélecteur de date pour choisir l'année de l'élection. <br><br>
+											&bull; Utilisez le sélecteur de communes pour centrer la carte sur une commune et zoomer .<br><br>
+											&bull; Placez le curseur de la souris sur la carte pour zoomer et se déplacer sur la carte. <br>
+											La fenêtre à gauche de la carte donne les informations détaillées de la commune survolée par la souris. <br><br>
+											&bull; Le graphique à barres présente les résultats du regroupement par types de communes.</p>
+										</p>
+									</div>
+									<div class="modal-footer">
+									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div> 
+						  </div>
+						</div>
+					</div>
+
+					<div class="col-md-offset-1 col-md-2 text-center">
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#informations">Informations</button>
+						<div class="modal fade bd-example-modal-lg" id="informations" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+						  <div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+									  <button type="button" class="close" data-dismiss="modal">&times;</button>
+									  <h2 class="modal-title" style="color: #000; font-size: 20px;">INFORMATIONS</h2>
+									</div>
+									<div class="modal-body">
+										<p  style="color: #000; font-size: 12px; text-align : left">
+											&bull; La carte représente soit les listes arrivées en tête pour les élections européennes, soit les candidats arrivés en tête au 1er tour pour les élections présidentielles.<br><br>
+											&bull; Chaque commune est représentée par un cercle dont le diamètre est fonction de sa population.<br><br>
+											&bull; Les couleurs représentent les nuances politiques des listes ou des candidats arrivé(e)s en tête. <br><br> 
+											&bull; La déformation de la carte minimise la superposition des cercles et facilite la lecture de la carte.<br><br>
+											&bull; Le graphique à barres représente la liste ou le candidat arrivé(e) en tête par groupe de communes. Toutes les communes sont regroupées par nombre d'habitants.<br><br>
+											&bull; Cet explorateur de données n’est pas adapté à une utilisation sur smartphone ou tablette.<br><br>
+											&bull; Les fichiers des <a href="https://www.data.gouv.fr/"  target="_blank">résultats des elections</a> sont des open data du ministère de l'intérieur<br><br>
+											&bull; Les fichiers  <a href="http://professionnels.ign.fr/adminexpress"  target="_blank">cartographiques</a> sont des open data de l'IGN <br><br>
+											&bull; Le fichier utilisé par le politoscope à été réalisé à partir de ces sources open data<br><br>
+											&bull; l'outil Politoscope utilise la plateforme <a href="https://observablehq.com"  target="_blank">observablehq.</a>. Retrouvez le code et le données sur <a href="https://github.com/ToulouseDataViz/Politoscope"  target="_blank">GitHub.</a>
+										</p>
+									</div>
+									<div class="modal-footer">
+									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div> 
+						  </div>
+						</div>
+					</div>
+				  </div>		  
+			 </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	 
+	<!-- Carte des résultats --> 
+	<div class='row '>
+	   <p style="font-size:2px">&nbsp;</p>
+	   <h3><div class="col-md-12  text-center"><span id="titre"></span></div></h3>
+	   <!-- légende -->
+	   <h2><div class="col-md-12 text-center" id =legend></div></h2><br>
+	   <div class="col-md-12" id =mapContainer></div>
+		<p style="font-size:2px">&nbsp;</p>
+		
+		
+	</div>
+	<p style="font-size:2px"></p>
+	<div class='row '>	
+		<!-- Selecteur d'années -->
+		<div class="col-md-6">
+			<div class="panel-body" style="background-color: #85d6d2; "  >
+				<div class="col-md-12"  style="color: #000; font-size: 14px;" id =select_year> </div>
+			</div>
+			<h3><div class="col-md-12  text-center" ;> Sélectionnez une date d'élection </div></h3>
+		</div>
+
+		<!-- Selecteur reset : suprimer -->
+
+		<!--Selecteur commune -->
+		<div class="col-md-offset-1 col-md-5">
+			<div class="panel-body" style="background-color: #85d6d2; "  >
+				<div class="col-md-12 text-center" style="color: #000; font-size: 14px;" id =select_com></div>
+			</div>
+			<h3><div class="col-md-12  text-center"> Zoomez sur une commune</div></h3>
+		</div>
+	</div> 
+
+	<!-- row chart -->		
+	<p>&nbsp;</p>
+		<div class='row '>
+			<div class=" col-md-12"></div>
+			<div class="col-md-12 text-left  " id =rowContainer></div>
+		</div>
+
+	<p>&nbsp;</p>
+	<h3>Créé par Alain Ottenheimer - <a href="http://datasens.fr" target="_blank"> datasens.fr </a>  avec le support d'Alain Roan - <a href="https://perceptible.fr"> perceptible.fr </a>  - licence <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank"> MIT </a> - sept 2019</h3>   
+	<p>&nbsp;</p>
+</div>
+
+<script type="module">
+
+// gestion des fenêtres modal 
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+
+// Chargement des celulles observablehq
+import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime?module";
+import notebook from "https://api.observablehq.com/d/2358fc843b2f5409.js";
+const notebookCellsToRender = {
+  "viewof year": "#select_year",
+  "legend": "#legend",
+  "viewof titre" : "#titre",
+  "viewof map": "#mapContainer",
+  "viewof as": "#select_com",
+  "chart": "#rowContainer",
+
+};
+
+Runtime.load(notebook, (cell) => {
+
+  const selector = notebookCellsToRender[cell.name];
+
+  if (selector) {
+    return new Inspector(document.querySelector(selector));
+  } else {
+    return true;
+  }
+});
+
+// licence MIT
+</script>
+</body>

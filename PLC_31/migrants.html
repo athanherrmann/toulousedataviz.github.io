@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Exercice - plc31_mars_2021</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="PLC31, Toulouse-dataviz, carte ">
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"  integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="  crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<style>
+
+body {
+ background-color: #ddd;
+ }
+
+p {text-align: center;
+  font-size: 10px; }
+
+</style>
+
+<body>
+<div class="container-fluid">
+  <div class="panel-body text-center" style="display: flex; align-items: center ; justify-content: center; margin-top : 3px; max-height: 35px ; font-size:20px;  background-color: #e6d7a8; color:rgb(241, 10, 10); "  ><strong> ET MAINTENANT, A VOUS DE JOUER ! <br></strong></div>
+
+  <div class="panel-body text-center" style=" text-align : left; margin-top : 0px; min-height: 30px ; font-size:14px;  background-color: #e6d7a8;">
+  <div class='row ' style="  background-color: #e6d7a8;">
+
+    <div  id =commentaire align="left">
+    Vous devez choisir les couleurs des pays, la taille des cercles, la couleur du fond de carte et enfin le titre de votre carte. 
+    Vos choix s'affichent sur la carte. vous devez aussi <strong>penser à justifier vos choix</strong> : pourquoi avoir choisi cette taille de cercle? ces couleurs? ce titre? et ces étiquettes?
+    </div>
+    <p>&nbsp;</p>
+  </div>  
+  
+   
+  <div class='row ' style="  background-color: #e6d7a8;">
+    <!-- partie gauche --> 
+    <div class="col-md-4">
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =name> </div> 
+      <p>&nbsp;</p>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =pays_colors> </div>
+      <p>&nbsp;</p>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =circle_color> </div>
+      <p>&nbsp;</p>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =diametre_circle> </div>
+      <p>&nbsp;</p>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =fond_color> </div>
+      <p>&nbsp;</p>      
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =legende_circle> </div>
+      <p>&nbsp;</p>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =titre> </div>
+      <p>&nbsp;</p>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =graph_png> </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="col-md-12"   id =carte> </div>
+    </div>
+
+   </div>
+
+
+  </div>
+
+      <p>&nbsp;</p>
+      <div> <p> Alain Ottenheimer <a href="http://toulouse-dataviz.fr" target="_blank"> - Association Toulouse dataviz   </a>  - PLC31 <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank"> - licence MIT </a> - mars 2021</p></div>
+     
+</div>
+
+
+<script type="module">
+
+
+// Chargement des celulles observablehq
+import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime?module";
+import notebook from "https://api.observablehq.com/d/a905829c98d92612.js";
+
+
+const notebookCellsToRender = {
+  "viewof name": "#name",
+  "viewof pays_colors": "#pays_colors",
+  "viewof diametre_circle": "#diametre_circle",
+  "viewof circle_color": "#circle_color",
+  "viewof fond_color": "#fond_color",
+  "viewof select_etiquette_circle_3": "#legende_circle",
+  "viewof select_titre": "#titre",
+  "carte": "#carte",
+  "graph_png": "#graph_png",
+  
+  
+};
+
+Runtime.load(notebook, (cell) => {
+
+  const selector = notebookCellsToRender[cell.name];
+
+  if (selector) {
+    return new Inspector(document.querySelector(selector));
+  } else {
+    return true;
+  }
+});
+
+
+</script>
+</body>
