@@ -36,25 +36,25 @@ p {text-align: center;
   <div class='row ' style="  background-color: #e6d7a8;">
     <!-- partie gauche --> 
     <div class="col-md-4">
-      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =name> </div> 
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id ="observablehq-viewof-name-6ebb9049"> </div> 
       <p>&nbsp;</p>
-      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =pays_colors> </div>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id ="observablehq-viewof-pays_colors-6ebb9049"> </div>
       <p>&nbsp;</p>
-      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =circle_color> </div>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id ="observablehq-viewof-diametre_circle-6ebb9049"> </div>
       <p>&nbsp;</p>
-      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =diametre_circle> </div>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id ="observablehq-viewof-circle_color-6ebb9049"> </div>
       <p>&nbsp;</p>
-      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =fond_color> </div>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id ="observablehq-viewof-fond_color-6ebb9049"> </div>
       <p>&nbsp;</p>      
-      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =legende_circle> </div>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id ="observablehq-viewof-select_etiquette_circle_3-6ebb9049"> </div>
       <p>&nbsp;</p>
-      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =titre> </div>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id ="observablehq-viewof-select_titre-6ebb9049"> </div>
       <p>&nbsp;</p>
-      <div class="col-md-12"  style="color: #000; font-size: 12px;" id =graph_png> </div>
+      <div class="col-md-12"  style="color: #000; font-size: 12px;" id ="observablehq-graph_png-6ebb9049"> </div>
     </div>
 
     <div class="col-md-8">
-      <div class="col-md-12"   id =carte> </div>
+      <div class="col-md-12"   id ="observablehq-carte_custom_Europe-6ebb9049"> </div>
     </div>
 
    </div>
@@ -66,6 +66,33 @@ p {text-align: center;
       <div> <p> Alain Ottenheimer <a href="http://toulouse-dataviz.fr" target="_blank"> - Association Toulouse dataviz   </a>  - PLC31 <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank"> - licence MIT </a> - mars 2021</p></div>
      
 </div>
+
+
+// v1.4
+
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/d/3084cf5b1d2439cf.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "carte_custom_Europe") return new Inspector(document.querySelector("#observablehq-carte_custom_Europe-6ebb9049"));
+  if (name === "viewof name") return new Inspector(document.querySelector("#observablehq-viewof-name-6ebb9049"));
+  if (name === "viewof pays_colors") return new Inspector(document.querySelector("#observablehq-viewof-pays_colors-6ebb9049"));
+  if (name === "viewof diametre_circle") return new Inspector(document.querySelector("#observablehq-viewof-diametre_circle-6ebb9049"));
+  if (name === "viewof circle_color") return new Inspector(document.querySelector("#observablehq-viewof-circle_color-6ebb9049"));
+  if (name === "viewof fond_color") return new Inspector(document.querySelector("#observablehq-viewof-fond_color-6ebb9049"));
+  if (name === "viewof select_etiquette_circle_3") return new Inspector(document.querySelector("#observablehq-viewof-select_etiquette_circle_3-6ebb9049"));
+  if (name === "viewof select_titre") return new Inspector(document.querySelector("#observablehq-viewof-select_titre-6ebb9049"));
+  if (name === "graph_png") return new Inspector(document.querySelector("#observablehq-graph_png-6ebb9049"));
+  return ["carte_custom_EMEA","circleLegendEurope","circleLegendEMEA"].includes(name);
+});
+</script>
+
+
+
+
+
+
 
 
 <script type="module">
