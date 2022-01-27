@@ -1,0 +1,22 @@
+{
+  "name": "tdv_presentation",
+  "version": "1.0.0",
+  "description": "Présentation Reveal TDV",
+  "main": "index.js",
+  "scripts": {
+    "test": "http-server"
+  },
+  "keywords": [
+    "Toulouse",
+    "DataViz",
+    "Reveal"
+  ],
+  "dependencies": {
+    "reveal.js": "4.2.1"
+  },
+  "devDependencies": {
+    "httpserver": "0.3.0"
+  },
+  "author": "TDV",
+  "license": "ISC"
+}
