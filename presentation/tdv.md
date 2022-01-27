@@ -4,7 +4,7 @@
 
 Association Toulouse DataViz (TDV)
 
-<small>[toulouse-dataviz.fr/presentation](https://www.toulouse-dataviz.fr/presentation)</small>
+<small>[toulousedataviz.github.io/presentation/](https://toulousedataviz.github.io/presentation/)</small>
 
 ---
 
@@ -124,7 +124,7 @@ On aime bien:
 ## NOS SPONSORS
 
 [<img height="65" src="https://toulousedataviz.github.io/presentation/image/cleverAge.png" style="border:0;box-shadow:none">](https://www.clever-age.com/fr/)
-[<img height="65" src="https://toulousedataviz.github.io/presentation/image/vectorInformatikGmbH_logo" style="border:0;box-shadow:none">](https://www.vector.com/fr/fr/)
+[<img height="65" src="https://toulousedataviz.github.io/presentation/image/vectorInformatikGmbH_logo.svg" style="border:0;box-shadow:none">](https://www.vector.com/fr/fr/)
 
 [<img height="70" src="https://toulousedataviz.github.io/presentation/image/cd31-logo-horizontal_93x300.png" style="border:0;box-shadow:none">](https://www.haute-garonne.fr/)
 [<img height="70" src="https://toulousedataviz.github.io/presentation/image/etincelle.jpeg" style="border:0;box-shadow:none">](http://www.coworking-toulouse.com/)
