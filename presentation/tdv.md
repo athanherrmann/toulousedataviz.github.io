@@ -130,7 +130,6 @@ On aime bien:
 [<img height="70" src="https://toulousedataviz.github.io/presentation/image/etincelle.jpeg" style="border:0;box-shadow:none">](http://www.coworking-toulouse.com/)
 
 [<img height="50" src="https://toulousedataviz.github.io/presentation/image/makina.jpeg" style="border:0;box-shadow:none">](https://makina-corpus.com//)<br>
-[<img height="60" src="https://toulousedataviz.github.io/presentation/image/datasensLogo.jpg" style="border:0;box-shadow:none">](http://datasens.fr//)
 [<img height="50" src="https://toulousedataviz.github.io/presentation/image/perceptible.jpg" style="border:0;box-shadow:none">](https://perceptible.fr//)
 
 ---
