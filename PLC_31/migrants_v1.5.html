@@ -26,9 +26,13 @@
     text-align: center;
     font-size: 10px;
   }
-  inputs div {
+  inputs div,
+  label {
     color: "#000";
-    font-size: 12px;
+    font-size: 10px !important;
+  }
+  h5 {
+    margin-left: 15px;
   }
   map svg {
     width: 100%;
@@ -81,19 +85,23 @@
         <!-- partie gauche -->
         <div class="col-md-4 inputs">
           <div class="col-md-12" id="observablehq-viewof-name-130d359b"></div>
-
+          <h5>Couleurs</h5>
           <div
             class="col-md-12"
             id="observablehq-viewof-pays_colors-130d359b"
           ></div>
-
           <div
             class="col-md-12"
-            id="observablehq-viewof-diametre_circle-130d359b"
+            id="observablehq-viewof-Syria_color-130d359b"
           ></div>
           <div
             class="col-md-12"
-            id="observablehq-viewof-select_showLegend-130d359b"
+            id="observablehq-viewof-pays_autres_colors-130d359b"
+          ></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-fond_color-130d359b"
           ></div>
 
           <div
@@ -104,10 +112,14 @@
             class="col-md-12"
             id="observablehq-viewof-alpha_circle-130d359b"
           ></div>
-
+          <h5>Légende</h5>
           <div
             class="col-md-12"
-            id="observablehq-viewof-fond_color-130d359b"
+            id="observablehq-viewof-diametre_circle-130d359b"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-select_showLegend-130d359b"
           ></div>
 
           <div
@@ -199,6 +211,17 @@
         return new Inspector(
           document.querySelector("#observablehq-viewof-pays_colors-130d359b")
         );
+      if (name === "viewof Syria_color")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-Syria_color-130d359b")
+        );
+      if (name === "viewof pays_autres_colors")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-pays_autres_colors-130d359b"
+          )
+        );
+
       if (name === "viewof diametre_circle")
         return new Inspector(
           document.querySelector(
