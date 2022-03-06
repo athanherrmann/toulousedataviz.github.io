@@ -1,0 +1,19 @@
+{
+  "name": "plc31",
+  "version": "1.0.0",
+  "description": "PLC31",
+  "main": "index.js",
+  "scripts": {
+    "test": "ws --cors.origin https://api.observablehq.com"
+  },
+  "keywords": [
+    "Toulouse",
+    "DataViz",
+    "PLC"
+  ],
+  "devDependencies": {
+    "local-web-server": "5.1.1"
+  },
+  "author": "TDV",
+  "license": "MIT"
+}

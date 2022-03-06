@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>Exercice - PLC31</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="PLC31, Toulouse-dataviz, carte " />
+<script
+  src="https://code.jquery.com/jquery-2.2.1.min.js"
+  integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+  crossorigin="anonymous"
+></script>
+<script
+  type="text/javascript"
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+></script>
+<link
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<style>
+  body {
+    background-color: #ddd;
+  }
+
+  p {
+    text-align: center;
+    font-size: 10px;
+  }
+  inputs div {
+    color: "#000";
+    font-size: 12px;
+  }
+  map svg {
+    width: 100%;
+  }
+</style>
+
+<body>
+  <div class="container-fluid">
+    <div
+      class="panel-body text-center"
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3px;
+        max-height: 35px;
+        font-size: 20px;
+        background-color: #e6d7a8;
+        color: rgb(241, 10, 10);
+      "
+    >
+      <strong> ET MAINTENANT, A VOUS DE JOUER ! <br /></strong>
+    </div>
+
+    <div
+      class="panel-body text-center"
+      style="
+        text-align: left;
+        margin-top: 0px;
+        min-height: 30px;
+        font-size: 14px;
+        background-color: #e6d7a8;
+      "
+    >
+      <div class="row" style="background-color: #e6d7a8">
+        <div
+          id="commentaire"
+          style="text-align: left; margin-left: 30px; margin-bottom: 30px"
+        >
+          Vous devez choisir les couleurs des pays, la taille des cercles, la
+          couleur du fond de carte et enfin le titre de votre carte. Vos choix
+          s'affichent sur la carte. vous devez aussi
+          <strong>penser à justifier vos choix</strong> : pourquoi avoir choisi
+          cette taille de cercle ? ces couleurs ? ce titre ? et ces étiquettes ?
+        </div>
+      </div>
+
+      <div class="row" style="background-color: #e6d7a8">
+        <!-- Penser à modifier l'identifiant en suffixe -->
+        <!-- partie gauche -->
+        <div class="col-md-4 inputs">
+          <div class="col-md-12" id="observablehq-viewof-name-130d359b"></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-pays_colors-130d359b"
+          ></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-diametre_circle-130d359b"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-select_showLegend-130d359b"
+          ></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-circle_color-130d359b"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-alpha_circle-130d359b"
+          ></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-fond_color-130d359b"
+          ></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-showLegend-130d359b"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-select_etiquette_circle_3-130d359b"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-select_etiquette_circle_4-130d359b"
+          ></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-select_titre-130d359b"
+          ></div>
+
+          <div
+            class="col-md-12"
+            style="margin-top: 30px"
+            id="observablehq-graph_png-130d359b"
+          ></div>
+        </div>
+
+        <!-- right -->
+        <div class="col-md-8">
+          <div
+            class="col-md-12 map"
+            id="observablehq-carte_custom_Europe-130d359b"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p>
+        Alain Ottenheimer- Vincent Vivanloc
+        <a href="http://toulouse-dataviz.fr" target="_blank">
+          - Association Toulouse dataviz
+        </a>
+        - PLC31
+        <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank">
+          - licence MIT
+        </a>
+        - Notebook observablehq
+        <a href="https://observablehq.com/d/cac3d62bfa17c3cb">
+          CREER VOTRE VISUALISATION DE DONNEES</a
+        >
+        - mars 2021-2022
+      </p>
+    </div>
+  </div>
+
+  <script type="module">
+    import {
+      Runtime,
+      Inspector,
+    } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+    import define from "https://api.observablehq.com/d/cac3d62bfa17c3cb.js?v=3";
+    new Runtime().module(define, (name) => {
+      if (name === "viewof showLegend")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-showLegend-130d359b")
+        );
+      if (name === "viewof select_etiquette_circle_3")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-select_etiquette_circle_3-130d359b"
+          )
+        );
+      if (name === "viewof select_etiquette_circle_4")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-select_etiquette_circle_4-130d359b"
+          )
+        );
+      if (name === "carte_custom_Europe")
+        return new Inspector(
+          document.querySelector("#observablehq-carte_custom_Europe-130d359b")
+        );
+      if (name === "viewof name")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-name-130d359b")
+        );
+      if (name === "viewof pays_colors")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-pays_colors-130d359b")
+        );
+      if (name === "viewof diametre_circle")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-diametre_circle-130d359b"
+          )
+        );
+      if (name === "viewof circle_color")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-circle_color-130d359b")
+        );
+      if (name === "viewof alpha_circle")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-alpha_circle-130d359b")
+        );
+      if (name === "viewof fond_color")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-fond_color-130d359b")
+        );
+      if (name === "viewof select_titre")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-select_titre-130d359b")
+        );
+      if (name === "graph_png")
+        return new Inspector(
+          document.querySelector("#observablehq-graph_png-130d359b")
+        );
+      return [
+        "carte_custom_EMEA",
+        "circleLegendEurope",
+        "circleLegendEMEA",
+      ].includes(name);
+    });
+  </script>
+  <!--
+  <script type="module">
+    import {
+      Runtime,
+      Inspector,
+    } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+    // Penser à modifier l'URL - seul un notebook observable publié peut-être récupéré
+    import define from "https://api.observablehq.com/d/cac3d62bfa17c3cb.js?v=3";
+    new Runtime().module(define, (name) => {
+      if (name === "carte_custom_Europe")
+        // Penser à modifier l'identifiant en suffixe
+        return new Inspector(
+          document.querySelector("#observablehq-carte_custom_Europe-130d359b")
+        );
+      if (name === "viewof name")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-name-130d359b")
+        );
+      if (name === "viewof pays_colors")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-pays_colors-130d359b")
+        );
+      if (name === "viewof diametre_circle")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-diametre_circle-130d359b"
+          )
+        );
+      if (name === "viewof circle_color")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-circle_color-130d359b")
+        );
+      if (name === "viewof fond_color")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-fond_color-130d359b")
+        );
+
+      if (name === "viewof select_etiquette_circle_3")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-select_etiquette_circle_3-130d359b"
+          )
+        );
+
+      if (name === "viewof select_etiquette_circle_4")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-select_etiquette_circle_4-130d359b"
+          )
+        );
+
+      if (name === "viewof showLegend")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-showLegend-130d359b")
+        );
+
+      if (name === "viewof select_titre")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-select_titre-130d359b")
+        );
+      if (name === "graph_png")
+        return new Inspector(
+          document.querySelector("#observablehq-graph_png-130d359b")
+        );
+      return [
+        "carte_custom_EMEA",
+        "circleLegendEurope",
+        "circleLegendEMEA",
+      ].includes(name);
+    });
+  </script>
+--></body>
