@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">### Association Toulouse DataViz (TDV)
+
+<img width="150" src="https://toulousedataviz.github.io/presentation/image/Logo_TDV_5.jpg" style="border:0;box-shadow:none">
+
+Association Toulouse DataViz (TDV)
+
+<small>[toulousedataviz.github.io/presentation/](https://toulousedataviz.github.io/presentation/)</small>
+</script></section><section  data-markdown><script type="text/template">
+## NOTRE AMBITION ?
+
+#### Promouvoir la visualisation des données
+
+- Découvrir les vérités enfouies dans les _open data_
+- Déjouer les visualisations trompeuses
+- Convaincre avec des graphiques
+</script></section><section  data-markdown><script type="text/template">
+## QUE FAISONS-NOUS ?
+
+- Rencontres
+- Evénements dataviz
+- Sensibilisation
+- Offres de services
+</script></section><section  data-markdown><script type="text/template">
+## RENCONTRES
+
+- Comprendre la dataviz
+- Découvrir les réalisations
+- Témoigner
+- S'approprier les outils (Ateliers)
+</script></section><section  data-markdown><script type="text/template">
+## EVENEMENTS DATAVIZ
+
+Concours annuel HACKAVIZ
+
+> Raconter une histoire <br></br>avec des graphiques
+</script></section><section  data-markdown><script type="text/template">
+## HACKAVIZ
+
+Concours de dataviz depuis 2018
+
+<img height="200" src="https://toulousedataviz.github.io/presentation/image/logo_hackaviz_site.jpg" style="border:0;box-shadow:none"><br>
+
+- Raconter une histoire avec des graphiques
+- Jeu de données open data original
+- Une création, en solo ou en équipe en 10 jours
+- Grande soirée de remise des prix : Hackaviz party
+</script></section><section  data-markdown><script type="text/template">
+## HACKAVIZ
+
+<img height="200" src="https://toulousedataviz.github.io/presentation/image/logo_hackaviz_site.jpg" style="border:0;box-shadow:none"><br>
+Année : thème, nombre de soumissions
+- 2018 : Les caractéristiques des communes d'Occitanie (15)
+- 2019 : Déplacements domicile-travail en Occitanie (24)
+- 2020 : Le tourisme en Occitanie (37)
+- 2021 : Les quartiers prioritaires et foncier en Occitanie (27)
+- 2022 : La copie privée en France (16)
+
+</script></section><section  data-markdown><script type="text/template">
+## SENSIBILISATION
+
+- Collèges, lycées, universités et entreprises
+  > S'initier à l'analyse et <br></br> à la visualisation de données
+- Parcours Laïque et Citoyen du CD31
+  > Interventions auprès des collégiens
+</script></section><section  data-markdown><script type="text/template">
+## OFFRE DE SERVICES
+
+- Initiation à la dataviz
+- Hackaviz sur mesure
+- Préparation de données
+- Réalisation de visualisation
+  > [Nos offres](https://toulouse-dataviz.fr/offres)
+</script></section><section  data-markdown><script type="text/template">
+## QUELQUES CHIFFRES
+
+- Création du meetup Toulouse Datviz : déc 2015
+- Création de l'association Toulouse DataViz : déc 2017
+- 1700 membres meetup (Juillet 2022)
+- 40 meetup
+- 26 intervenants
+- 5 Hackaviz depuis 2018
+</script></section><section  data-markdown><script type="text/template">
+## NOS TECHNOLOGIES PRÉFÉRÉES
+
+On aime bien:
+
+- JavaScript, D3.js, ObservableHQ
+- Python, Jupyter
+- R
+- QGIS, Leaflet
+- Excel, Tableau
+- et pleins d'autres...
+</script></section><section  data-markdown><script type="text/template">## L'EQUIPE
+| <small>Alain Ottenheimer </small>|<small>Alain Roan</smalll>|<small>Aurore Archimbaud</small>|<small>Christophe Bontemps</small>|<small>Vincent Vivanloc</small> | <small>Christophe Regouby</small> | <small>Edith Maulandi</small> |                                                              
+| :---: | :----: | : -----: | :----: |  : -----: | :----: |  :----: |
+| <img height="80" src="https://github.com/ToulouseDataViz/website/raw/main/src/content/pics/team-pics/alaino.jpg" ></img>| <img height="80" src="https://github.com/ToulouseDataViz/website/raw/main/src/content/pics/team-pics/alainr.jpg" style="border:0;box-shadow:none"> | <img height="80" src="https://github.com/ToulouseDataViz/website/raw/main/src/content/pics/team-pics/aurore.jpg" style="border:0;box-shadow:none"> | <img height="80" src="https://github.com/ToulouseDataViz/website/raw/main/src/content/pics/team-pics/christophe.jpg" style="border:0;box-shadow:none"> | <img height="80" src="https://github.com/ToulouseDataViz/website/raw/main/src/content/pics/team-pics/vincent.jpg" style="border:0;box-shadow:none"> |<img height="80" src="https://github.com/ToulouseDataViz/website/raw/main/src/content/pics/team-pics/christopheR.jpg" style="border:0;box-shadow:none"> | <img height="80" src="https://github.com/ToulouseDataViz/website/raw/main/src/content/pics/team-pics/edith.jpg" style="border:0;box-shadow:none"> | 
+ 
+</script></section><section  data-markdown><script type="text/template">
+## REJOIGNEZ LE CLUB
+
+- Nos [Newsletters](https://ressources.toulouse-dataviz.fr/) mensuelles (ou presque)
+- Avant-premières de nos événements <small>(Meetup & Hackaviz)</small>
+- Echanges avec la communauté via notre [Discord](https://discord.gg/Ch23qScbpc)
+- Publications de vos DataViz sur le site TDV
+  > [Inscription gratuite](https://toulouse-dataviz.us20.list-manage.com/subscribe?u=6d06abd4e903b49060d162a89&id=31bc433cb4)
+</script></section><section  data-markdown><script type="text/template">
+## NOS SPONSORS
+
+[<img height="65" src="https://toulousedataviz.github.io/presentation/image/cleverAge.png" style="border:0;box-shadow:none">](https://www.clever-age.com/fr/)
+[<img height="65" src="https://toulousedataviz.github.io/presentation/image/vectorInformatikGmbH_logo.svg" style="border:0;box-shadow:none">](https://www.vector.com/fr/fr/)
+
+[<img height="70" src="https://toulousedataviz.github.io/presentation/image/etincelle.jpeg" style="border:0;box-shadow:none">](http://www.coworking-toulouse.com/)
+[<img height="70" src="https://www.harrycow.com/wp-content/uploads/2019/05/logo-harrycow-coworking.jpg" style="border:0;box-shadow:none">](http://harrycow.com/)
+
+[<img height="50" src="https://toulousedataviz.github.io/presentation/image/makina.jpeg" style="border:0;box-shadow:none">](https://makina-corpus.com//)<br>
+[<img height="50" src="https://toulousedataviz.github.io/presentation/image/perceptible.jpg" style="border:0;box-shadow:none">](https://perceptible.fr//)
+</script></section><section  data-markdown><script type="text/template">
+## NOUS RETROUVER !
+
+| <small>Toulouse DataViz</small>|<small>Twitter</small>|<small>Meetup</small>|<small>YouTube</small>|<small>Discord</small>|
+| :------: | :------: | :-----------: | :-----------: | :------------: |
+| [<img height="80" src="https://toulousedataviz.github.io/presentation/image/Logo_TDV_4.png" style="border:0;box-shadow:none">](http://toulouse-dataviz.fr) | [<img height="80" src="https://toulousedataviz.github.io/presentation/image/logo-twitter-rond.png" style="border:0;box-shadow:none">](https://twitter.com/Tls_dataviz) | [<img height="80" src="https://toulousedataviz.github.io/presentation/image/meetup.png" style="border:0;box-shadow:none">](https://www.meetup.com/fr-FR/Meetup-Visualisation-des-donnees-Toulouse/) | [<img height="80" src="https://toulousedataviz.github.io/presentation/image/youtube.jpg" style="border:0;box-shadow:none">](https://www.youtube.com/channel/UCo64gnxLZs1xIN-Y0Bv_Hpg/about) | [<img height="80" src="https://toulousedataviz.github.io/presentation/image/Discord-Logo-Color.png" style="border:0;box-shadow:none">](https://discord.gg/Ch23qScbpc) |</script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+	if(isLight(bgColor)){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
