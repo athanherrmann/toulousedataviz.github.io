@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>Exercice - PLC31</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="PLC31, Toulouse-dataviz, carte " />
+<script
+  src="https://code.jquery.com/jquery-2.2.1.min.js"
+  integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+  crossorigin="anonymous"
+></script>
+<script
+  type="text/javascript"
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+></script>
+<link
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<style>
+  body {
+    background-color: #ddd;
+  }
+
+  p {
+    text-align: center;
+    font-size: 10px;
+  }
+  inputs div,
+  label {
+    color: "#000";
+    font-size: 10px !important;
+  }
+  h5 {
+    margin-left: 15px;
+  }
+  map svg {
+    width: 100%;
+  }
+</style>
+
+<body>
+  <div class="container-fluid">
+    <div
+      class="panel-body text-center"
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3px;
+        max-height: 35px;
+        font-size: 20px;
+        background-color: #e6d7a8;
+        color: rgb(241, 10, 10);
+      "
+    >
+      <strong> ET MAINTENANT, A VOUS DE JOUER ! <br /></strong>
+    </div>
+
+    <div
+      class="panel-body text-center"
+      style="
+        text-align: left;
+        margin-top: 0px;
+        min-height: 30px;
+        font-size: 14px;
+        background-color: #e6d7a8;
+      "
+    >
+      <div class="row" style="background-color: #e6d7a8">
+        <div
+          id="commentaire"
+          style="text-align: left; margin-left: 30px; margin-bottom: 30px"
+        >
+          Vous devez choisir les couleurs des pays, la taille des cercles, la
+          couleur du fond de carte et enfin le titre de votre carte. Vos choix
+          s'affichent sur la carte. vous devez aussi
+          <strong>penser à justifier vos choix</strong> : pourquoi avoir choisi
+          cette taille de cercle ? ces couleurs ? ce titre ? et ces étiquettes ?
+        </div>
+      </div>
+
+      <div class="row" style="background-color: #e6d7a8">
+        <!-- Penser à modifier l'identifiant en suffixe -->
+        <!-- partie gauche -->
+        <div class="col-md-4 inputs">
+          <div class="col-md-12" id="observablehq-viewof-name-d69a64cc"></div>
+          <h5>Couleurs</h5>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-pays_colors-d69a64cc"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-Syria_color-d69a64cc"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-pays_autres_colors-d69a64cc"
+          ></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-fond_color-d69a64cc"
+          ></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-circle_color-d69a64cc"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-alpha_circle-d69a64cc"
+          ></div>
+          <h5>Légende</h5>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-diametre_circle-d69a64cc"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-select_par_hab-d69a64cc"
+          ></div>          
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-select_showLegend-d69a64cc"
+          ></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-showLegend-d69a64cc"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-select_etiquette_circle_3-d69a64cc"
+          ></div>
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-select_etiquette_circle_4-d69a64cc"
+          ></div>
+
+          <div
+            class="col-md-12"
+            id="observablehq-viewof-select_titre-d69a64cc"
+          ></div>
+
+          <div
+            class="col-md-12"
+            style="margin-top: 30px"
+            id="observablehq-graph_png-d69a64cc"
+          ></div>
+        </div>
+
+        <!-- right -->
+        <div class="col-md-8">
+          <div
+            class="col-md-12 map"
+            id="observablehq-carte_custom_Europe-d69a64cc"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p>
+        Alain Ottenheimer- Vincent Vivanloc
+        <a href="http://toulouse-dataviz.fr" target="_blank">
+          - Association Toulouse dataviz
+        </a>
+        - PLC31
+        <a href="https://fr.wikipedia.org/wiki/Licence_MIT" target="_blank">
+          - licence MIT
+        </a>
+        - Notebook observablehq
+        <a href="https://observablehq.com/d/cac3d62bfa17c3cb">
+          CREER VOTRE VISUALISATION DE DONNEES</a
+        >
+        - mars 2021-2022 rev jan 2023
+      </p>
+    </div>
+  </div>
+
+  <script type="module">
+    import {
+      Runtime,
+      Inspector,
+    } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/@tdvz/carte_migrants_syriens_v1-5-3@7446.js?v=3";
+    new Runtime().module(define, (name) => {
+      if (name === "viewof showLegend")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-showLegend-d69a64cc")
+        );
+      if (name === "viewof select_etiquette_circle_3")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-select_etiquette_circle_3-d69a64cc"
+          )
+        );
+      if (name === "viewof select_etiquette_circle_4")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-select_etiquette_circle_4-d69a64cc"
+          )
+        );
+        if (name === "viewof select_par_hab")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-select_par_hab-d69a64cc"
+          )
+        );  
+      if (name === "carte_custom_Europe")
+        return new Inspector(
+          document.querySelector("#observablehq-carte_custom_Europe-d69a64cc")
+        );
+      if (name === "viewof name")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-name-d69a64cc")
+        );
+      if (name === "viewof pays_colors")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-pays_colors-d69a64cc")
+        );
+      if (name === "viewof Syria_color")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-Syria_color-d69a64cc")
+        );
+      if (name === "viewof pays_autres_colors")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-pays_autres_colors-d69a64cc"
+          )
+        );
+
+      if (name === "viewof diametre_circle")
+        return new Inspector(
+          document.querySelector(
+            "#observablehq-viewof-diametre_circle-d69a64cc"
+          )
+        );
+      if (name === "viewof circle_color")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-circle_color-d69a64cc")
+        );
+      if (name === "viewof alpha_circle")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-alpha_circle-d69a64cc")
+        );
+      if (name === "viewof fond_color")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-fond_color-d69a64cc")
+        );
+      if (name === "viewof select_titre")
+        return new Inspector(
+          document.querySelector("#observablehq-viewof-select_titre-d69a64cc")
+        );
+      if (name === "graph_png")
+        return new Inspector(
+          document.querySelector("#observablehq-graph_png-d69a64cc")
+        );
+      return [
+        "carte_custom_EMEA",
+        "circleLegendEurope",
+        "circleLegendEMEA",
+      ].includes(name);
+    });
+  </script>
+
+
+ <!--
+New 
+<div id="observablehq-viewof-pays_colors-d69a64cc"></div>
+<div id="observablehq-viewof-pays_autres_colors-d69a64cc"></div>
+<div id="observablehq-viewof-Syria_color-d69a64cc"></div>
+<div id="observablehq-viewof-circle_color-d69a64cc"></div>
+<div id="observablehq-viewof-fond_color-d69a64cc"></div>
+<div id="observablehq-viewof-diametre_circle-d69a64cc"></div>
+<div id="observablehq-viewof-showLegend-d69a64cc"></div>
+<div id="observablehq-viewof-select_etiquette_circle_3-d69a64cc"></div>
+<div id="observablehq-viewof-select_etiquette_circle_4-d69a64cc"></div>
+<div id="observablehq-viewof-select_par_hab-d69a64cc"></div>
+<div id="observablehq-viewof-select_titre-d69a64cc"></div>
+<div id="observablehq-carte_custom_Europe-d69a64cc"></div>
+<div id="observablehq-graph_png-d69a64cc"></div>
+<p>Credit: <a href="https://observablehq.com/@tdvz/carte_migrants_syriens_v1-5-3@7446"> Géo-visualiser des données sur la crise des réfugiés Syriens- v1.5.3  by ToulouseDataviz</a></p>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/@tdvz/carte_migrants_syriens_v1-5-3@7446.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "viewof pays_colors") return new Inspector(document.querySelector("#observablehq-viewof-pays_colors-d69a64cc"));
+  if (name === "viewof pays_autres_colors") return new Inspector(document.querySelector("#observablehq-viewof-pays_autres_colors-d69a64cc"));
+  if (name === "viewof Syria_color") return new Inspector(document.querySelector("#observablehq-viewof-Syria_color-d69a64cc"));
+  if (name === "viewof circle_color") return new Inspector(document.querySelector("#observablehq-viewof-circle_color-d69a64cc"));
+  if (name === "viewof fond_color") return new Inspector(document.querySelector("#observablehq-viewof-fond_color-d69a64cc"));
+  if (name === "viewof diametre_circle") return new Inspector(document.querySelector("#observablehq-viewof-diametre_circle-d69a64cc"));
+  if (name === "viewof showLegend") return new Inspector(document.querySelector("#observablehq-viewof-showLegend-d69a64cc"));
+  if (name === "viewof select_etiquette_circle_3") return new Inspector(document.querySelector("#observablehq-viewof-select_etiquette_circle_3-d69a64cc"));
+  if (name === "viewof select_etiquette_circle_4") return new Inspector(document.querySelector("#observablehq-viewof-select_etiquette_circle_4-d69a64cc"));
+  if (name === "viewof select_par_hab") return new Inspector(document.querySelector("#observablehq-viewof-select_par_hab-d69a64cc"));
+  if (name === "viewof select_titre") return new Inspector(document.querySelector("#observablehq-viewof-select_titre-d69a64cc"));
+  if (name === "carte_custom_Europe") return new Inspector(document.querySelector("#observablehq-carte_custom_Europe-d69a64cc"));
+  if (name === "graph_png") return new Inspector(document.querySelector("#observablehq-graph_png-d69a64cc"));
+  return ["carte_custom_EMEA","renderCircleLegend"].includes(name);
+});
+</script>
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
