@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/bertin@1.7" charset="utf-8"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <title>Green Event Data 2023</title>
+
+<script type="module" crossorigin src="/assets/index-b4e3e782.js"></script>
+<link rel="stylesheet" href="/assets/index-637de2c4.css">
+
+<body>
+  <dialog id="modal">
+    <p>Bonjour !</p>
+    <p>Voici un compte rendu dans la préservation de la biodiversité par Pierre Fabre : 700 plantes sont conservées sur 17 sites.   
+    <br>
+    Cette datavisualisation présente trois aspects de cette préservation.</p>
+
+    <p><div class="photosContainer"><div class="photos">
+      <div>
+        <img src="/assets/leaf-46ad25d5.svg"/>
+        <div>Vue globale</div>
+      </div>
+      <div>
+        <img src="/assets/flower-4bd1f6ad.svg"/>
+        <div>Espèces protégées</div>
+      </div>
+      <div>
+        <img src="/assets/plane-c9ded9a5.svg"/>
+        <div>Espèces envahissantes</div>
+      </div>
+    </div>
+    </div>
+  </p>
+  <p><ul><li>Données fournies par Pierre Fabre pour les Green Event Data 2023</li><li>Données retravaillées avec Pandas, exploration avec ObservableHQ et Plot</li><li>Visualisation avec D3.js, bertin.js, fond de carte fourni par Nicolas Lambert, neocarto, LibreOffice, Inkscape, code TypeScript sous Vite. </li></ul></p>
+  <form method="dialog">
+    <button>C'est parti !</button>
+  </form>
+  
+  </dialog>
+  
+  <div id="app">
+    <div class="bubbleChartContainer">
+      <div id="canvasContainer"><canvas id="canvas"></canvas></div>
+      <div id="bubbleChart">
+        <h1>Vue globale</h1>
+        <div id="bubbleChart1"></div>
+        <h1>Espèces protégées</h1>
+        <div id="bubbleChart2"></div>
+        <h1>Espèces envahissantes</h1>
+        <div id="bubbleChart3"></div>
+      </div>
+      
+      
+    </div>
+    <div class="idCardContainer">
+      <div id="idCard"></div>
+      <div id="map"></div>
+      
+      <button  class="toolbar" id="displayAll">Tout afficher</button>
+     
+    </div>
+  </div>
+  
+</body>
+
+</html>
