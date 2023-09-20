@@ -23,6 +23,7 @@ Association Toulouse DataViz (TDV)
 - Rencontres
 - Evénements dataviz
 - Sensibilisation
+- Newsletter(mensuelle!)
 - Offres de services
 
 ---
@@ -65,7 +66,8 @@ Concours de dataviz depuis 2018
 - 2019 : 24 réalisations
 - 2020 : 37 réalisations
 - 2021 : 27 réalisations
-- 2022 : xx réalisations
+- 2022 : 16 réalisations
+- 2023 : 13 réalisations
 
 ---
 
@@ -74,7 +76,7 @@ Concours de dataviz depuis 2018
 - Collèges, lycées, universités et entreprises
   > S'initier à l'analyse et <br/> à la visualisation de données
 - Parcours Laïque et Citoyen du CD31
-  > Interventions auprès des collégiens
+  > Interventions auprès des collégiens depuis 3ans (10 interventions - 250 colégiens)  
 
 ---
 
@@ -92,10 +94,10 @@ Concours de dataviz depuis 2018
 
 - Création du meetup : oct 2015
 - Création de Toulouse DataViz : déc 2017
-- 1540 membres meetup (sept 2020)
-- 40 meetup
-- 26 intervenants
-- 4 Hackaviz depuis 2018
+- 1953 membres meetup (sept 2023)
+- 66 meetup
+- 41 intervenants exterieurs
+- 6 Hackaviz depuis 2018
 
 ---
 
@@ -103,7 +105,7 @@ Concours de dataviz depuis 2018
 
 On aime bien:
 
-- JavaScript, D3.js, ObservableHQ
+- JavaScript, ObservableHQ,  D3.js
 - Python, Jupyter
 - R
 - QGIS, Leaflet
