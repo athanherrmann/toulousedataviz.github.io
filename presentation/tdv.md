@@ -61,7 +61,6 @@ Concours de dataviz depuis 2018
 ## HACKAVIZ
 
 <img height="200" src="https://toulousedataviz.github.io/presentation/image/logo_hackaviz_site.jpg" style="border:0;box-shadow:none"><br>
-
 - 2018 : 15 réalisations
 - 2019 : 24 réalisations
 - 2020 : 37 réalisations
@@ -76,7 +75,7 @@ Concours de dataviz depuis 2018
 - Collèges, lycées, universités et entreprises
   > S'initier à l'analyse et <br/> à la visualisation de données
 - Parcours Laïque et Citoyen du CD31
-  > Interventions auprès des collégiens depuis 3ans (10 interventions - 250 colégiens)  
+  > Interventions auprès des collèges depuis 3ans (10 interventions - 250 collégiens)  
 
 ---
 
