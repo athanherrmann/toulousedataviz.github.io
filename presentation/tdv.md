@@ -129,7 +129,7 @@ On aime bien:
 [<img height="65" src="https://toulousedataviz.github.io/presentation/image/cleverAge.png" style="border:0;box-shadow:none">](https://www.clever-age.com/fr/)
 [<img height="65" src="https://toulousedataviz.github.io/presentation/image/vectorInformatikGmbH_logo.svg" style="border:0;box-shadow:none">](https://www.vector.com/fr/fr/)
 
-[<img height="70" src="https://toulousedataviz.github.io/presentation/image/presentation/image/LOGO PF_Data Office_QUADRI.jpg" style="border:0;box-shadow:none">]([https://www.haute-garonne.fr/](https://www.pierre-fabre.com/fr))
+[<img height="70" src="https://toulousedataviz.github.io/presentation/image/presentation/image/LOGO PF_Data Office_QUADRI_blanc.png" style="border:0;box-shadow:none">](https://www.pierre-fabre.com/fr)
 [<img height="70" src="https://toulousedataviz.github.io/presentation/image/etincelle.jpeg" style="border:0;box-shadow:none">](http://www.coworking-toulouse.com/)
 
 [<img height="50" src="https://toulousedataviz.github.io/presentation/image/makina.jpeg" style="border:0;box-shadow:none">](https://makina-corpus.com//)<br>
