@@ -22,8 +22,8 @@ Association Toulouse DataViz (TDV)
 
 - Rencontres
 - Evénements dataviz
-- Sensibilisation
-- Newsletter(mensuelle!)
+- Sensibilisations
+- Newsletters 
 - Offres de services
 
 ---
@@ -117,10 +117,10 @@ On aime bien:
 ## REJOIGNEZ LE CLUB
 
 - Newsletters
-- Avant-premières de nos événements <small>(Meetup & Hackaviz)</small>
-- Echanges avec la communauté via notre [Discord](https://discord.gg/Ch23qScbpc)
-- Publications de vos DataViz sur le site TDV
-  > [Inscription gratuite](https://toulouse-dataviz.us20.list-manage.com/subscribe?u=6d06abd4e903b49060d162a89&id=31bc433cb4)
+- Avant-premières de nos événements
+- Echanges avec la communauté via notre [discord](https://discord.gg/Ch23qScbpc)
+- Publications de vos DataViz sur le site [TDV]([(https://toulouse-dataviz.fr/))
+  > C'est gratuit,[inscrivez-vous ](https://toulouse-dataviz.us20.list-manage.com/subscribe?u=6d06abd4e903b49060d162a89&id=31bc433cb4)
 
 ---
 
@@ -129,7 +129,7 @@ On aime bien:
 [<img height="65" src="https://toulousedataviz.github.io/presentation/image/cleverAge.png" style="border:0;box-shadow:none">](https://www.clever-age.com/fr/)
 [<img height="65" src="https://toulousedataviz.github.io/presentation/image/vectorInformatikGmbH_logo.svg" style="border:0;box-shadow:none">](https://www.vector.com/fr/fr/)
 
-[<img height="70" src="https://toulousedataviz.github.io/presentation/image/cd31-logo-horizontal_93x300.png" style="border:0;box-shadow:none">](https://www.haute-garonne.fr/)
+[<img height="70" src="https://toulousedataviz.github.io/presentation/image/presentation/image/LOGO PF_Data Office_QUADRI.jpg" style="border:0;box-shadow:none">]([https://www.haute-garonne.fr/](https://www.pierre-fabre.com/fr))
 [<img height="70" src="https://toulousedataviz.github.io/presentation/image/etincelle.jpeg" style="border:0;box-shadow:none">](http://www.coworking-toulouse.com/)
 
 [<img height="50" src="https://toulousedataviz.github.io/presentation/image/makina.jpeg" style="border:0;box-shadow:none">](https://makina-corpus.com//)<br>
