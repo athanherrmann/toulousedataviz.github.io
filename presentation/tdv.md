@@ -125,7 +125,7 @@ On aime bien:
 
 ## NOS SPONSORS
 
-[<img height="65" src="https://toulousedataviz.github.io/presentation/image/cleverAge.png" style="border:0;box-shadow:none">](https://www.clever-age.com/fr/)
+[<img height="65" src="https://toulousedataviz.github.io/presentation/image/clever-logo-et-baseline-DIAMANT.jpg" style="border:0;box-shadow:none">](https://www.clever-age.com/fr/)
 [<img height="65" src="https://toulousedataviz.github.io/presentation/image/vectorInformatikGmbH_logo.svg" style="border:0;box-shadow:none">](https://www.vector.com/fr/fr/)
 
 [<img height="85" src="https://toulousedataviz.github.io/presentation/image/LOGO PF_Data Office_QUADRI_blanc.png" style="border:0;box-shadow:none">](https://www.pierre-fabre.com/fr)
