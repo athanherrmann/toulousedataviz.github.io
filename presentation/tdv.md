@@ -22,7 +22,8 @@ Association Toulouse DataViz (TDV)
 
 - Rencontres
 - Evénements dataviz
-- Sensibilisation
+- Sensibilisations
+- Newsletters 
 - Offres de services
 
 ---
@@ -60,11 +61,12 @@ Concours de dataviz depuis 2018
 ## HACKAVIZ
 
 <img height="200" src="https://toulousedataviz.github.io/presentation/image/logo_hackaviz_site.jpg" style="border:0;box-shadow:none"><br>
-
 - 2018 : 15 réalisations
 - 2019 : 24 réalisations
 - 2020 : 37 réalisations
 - 2021 : 27 réalisations
+- 2022 : 16 réalisations
+- 2023 : 13 réalisations
 
 ---
 
@@ -73,7 +75,7 @@ Concours de dataviz depuis 2018
 - Collèges, lycées, universités et entreprises
   > S'initier à l'analyse et <br/> à la visualisation de données
 - Parcours Laïque et Citoyen du CD31
-  > Interventions auprès des collégiens
+  > Interventions auprès des collèges depuis 3ans (10 interventions - 250 collégiens)  
 
 ---
 
@@ -91,10 +93,10 @@ Concours de dataviz depuis 2018
 
 - Création du meetup : oct 2015
 - Création de Toulouse DataViz : déc 2017
-- 1540 membres meetup (sept 2020)
-- 40 meetup
-- 26 intervenants
-- 4 Hackaviz depuis 2018
+- 1953 membres meetup (sept 2023)
+- 66 meetup
+- 41 intervenants exterieurs
+- 6 Hackaviz depuis 2018
 
 ---
 
@@ -102,7 +104,7 @@ Concours de dataviz depuis 2018
 
 On aime bien:
 
-- JavaScript, D3.js, ObservableHQ
+- JavaScript, ObservableHQ,  D3.js
 - Python, Jupyter
 - R
 - QGIS, Leaflet
@@ -114,23 +116,22 @@ On aime bien:
 ## REJOIGNEZ LE CLUB
 
 - Newsletters
-- Avant-premières de nos événements <small>(Meetup & Hackaviz)</small>
-- Echanges avec la communauté via notre [Discord](https://discord.gg/Ch23qScbpc)
-- Publications de vos DataViz sur le site TDV
-  > [Inscription gratuite](https://toulouse-dataviz.us20.list-manage.com/subscribe?u=6d06abd4e903b49060d162a89&id=31bc433cb4)
+- Avant-premières de nos événements
+- Echanges avec la communauté via notre [discord](https://discord.gg/Ch23qScbpc)
+- Publications de vos DataViz sur le site [TDV]([(https://toulouse-dataviz.fr/))
+  > C'est gratuit, [inscrivez-vous ](https://toulouse-dataviz.us20.list-manage.com/subscribe?u=6d06abd4e903b49060d162a89&id=31bc433cb4)
 
 ---
 
 ## NOS SPONSORS
 
-[<img height="65" src="https://toulousedataviz.github.io/presentation/image/cleverAge.png" style="border:0;box-shadow:none">](https://www.clever-age.com/fr/)
+[<img height="65" src="https://toulousedataviz.github.io/presentation/image/clever-logo-et-baseline-DIAMANT.jpg" style="border:0;box-shadow:none">](https://www.clever-age.com/fr/)
 [<img height="65" src="https://toulousedataviz.github.io/presentation/image/vectorInformatikGmbH_logo.svg" style="border:0;box-shadow:none">](https://www.vector.com/fr/fr/)
 
-[<img height="70" src="https://toulousedataviz.github.io/presentation/image/cd31-logo-horizontal_93x300.png" style="border:0;box-shadow:none">](https://www.haute-garonne.fr/)
-[<img height="70" src="https://toulousedataviz.github.io/presentation/image/etincelle.jpeg" style="border:0;box-shadow:none">](http://www.coworking-toulouse.com/)
+[<img height="85" src="https://toulousedataviz.github.io/presentation/image/LOGO PF_Data Office_QUADRI_blanc.png" style="border:0;box-shadow:none">](https://www.pierre-fabre.com/fr)
 
-[<img height="50" src="https://toulousedataviz.github.io/presentation/image/makina.jpeg" style="border:0;box-shadow:none">](https://makina-corpus.com//)<br>
-[<img height="50" src="https://toulousedataviz.github.io/presentation/image/perceptible.jpg" style="border:0;box-shadow:none">](https://perceptible.fr//)
+[<img height="70" src="https://toulousedataviz.github.io/presentation/image/etincelle.jpeg" style="border:0;box-shadow:none">](http://www.coworking-toulouse.com/)
+[<img height="50" src="https://toulousedataviz.github.io/presentation/image/perceptible.jpg" style="border:0;box-shadow:none">](https://perceptible.fr//)<br>
 
 ---
 

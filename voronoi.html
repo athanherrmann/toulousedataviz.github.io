@@ -1,0 +1,425 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Animated Voronoï map</title>
+    <meta name="description" content="Animated Voronoi map in D3.js">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://rawcdn.githack.com/Kcnarf/d3-weighted-voronoi/v1.0.0/build/d3-weighted-voronoi.js"></script>
+    <script src="https://rawcdn.githack.com/Kcnarf/d3-voronoi-map/v2.0.0/build/d3-voronoi-map.js"></script>
+    <style>
+      #layouter {
+        text-align: center;
+        position: relative;
+      }
+      
+      #wip {
+        display: none;
+        position: absolute;
+        top: 200px;
+        left: 330px;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .control {
+        position: absolute;
+      }
+      .control.top{
+        top: 5px;
+      }
+      .control.bottom {
+        bottom: 5px;
+      }
+      .control.left{
+        left: 5px;
+      }
+      .control.right {
+        right: 5px;
+      }
+      .control.right div{
+        text-align: right;
+      }
+      .control.left div{
+        text-align: left;
+      }
+      .control .separator {
+        height: 5px;
+      }
+
+      canvas {
+        margin: 1px;
+        border-radius: 1000px;
+        box-shadow: 2px 2px 6px grey;
+      }
+      canvas#background-image, canvas#alpha {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="layouter">
+      <canvas id="background-image"></canvas>
+      <canvas id="alpha"></canvas>
+      <canvas id="colored"></canvas>
+<!--
+      <div class="control top left">
+        <div>
+          <input id="arrangement" type="radio" name="arrangement" value="live" checked onchange="arrangementUpdated('live')"> live arrangement
+        </div>
+        <div>
+          <input id="arrangement" type="radio" name="arrangement" value="static" onchange="arrangementUpdated('static')"> static
+        </div>
+      </div>
+      
+      <div class="control top right">
+        <div>
+          Weighted Voronoï <input id="cellsOrWeights" type="radio" name="cellsOrWeights" value="cells" checked onchange="cellsOrWeightsUpdated('cells')">
+        </div>
+        <div>
+          Weights <input id="cellsOrWeights" type="radio" name="cellsOrWeights" value="circles" onchange="cellsOrWeightsUpdated('weights')">
+        </div>
+        <div>
+          Both <input id="cellsOrWeights" type="radio" name="cellsOrWeights" value="circles" onchange="cellsOrWeightsUpdated('cellsAndWeights')">
+        </div>
+      </div>
+     --> 
+      <div class="control bottom left">
+        <div>
+          <input id="showSites" type="checkbox" name="showSites" onchange="siteVisibilityUpdated()"> Show sites
+        </div>
+      </div>
+   <!--   
+      <div class="control bottom right">
+        <div>
+          Grey <input id="bgImgGrey" type="radio" name="bgImg" onchange="bgImgUpdated('grey')">
+        </div>
+        <div>
+          Radial rainbow <input id="bgImgRadialRainbow" type="radio" name="bgImg" onchange="bgImgUpdated('radialRainbow')">
+        </div>
+        <div>
+          Canonical rainbow <input id="bgImgCanonicalRainbow" type="radio" name="bgImg" checked onchange="bgImgUpdated('canonicalRainbow')">
+        </div>
+      </div>
+
+      <div id="wip">
+        Work in progress ...
+      </div>
+    -->
+    </div>
+    
+    <script>
+      var _PI = Math.PI,
+          _2PI = 2*Math.PI,
+          sqrt = Math.sqrt,
+          sqr = function(d) { return Math.pow(d,2); }
+      		epsilon = 1;
+      
+      //begin: layout conf.
+      var totalWidth = 300,
+          totalHeight = 300,
+          controlsHeight = 0,
+          canvasbw = 1, // canvas border width
+          canvasbs = 8, // canvas box-shadow
+          radius = (totalHeight-controlsHeight-canvasbs-2*canvasbw)/2,
+          width = 2*radius,
+          height = 2*radius,
+          halfRadius = radius/2
+          halfWidth = halfRadius,
+          halfHeight = halfRadius,
+          quarterRadius = radius/4;
+          quarterWidth = quarterRadius,
+          quarterHeight = quarterRadius;
+      //end: layout conf.
+      
+      //begin: drawing conf.
+      var arrangementType = "live",
+      		drawCellsOrWeights = "cells",
+          drawSites = false,
+          bgType = "canonicalRainbow",
+          bgImgCanvas, alphaCanvas, coloredCanvas,
+          bgImgContext, alphaContext, coloredContext,
+      		radialGradient;
+      //end: drawing conf.
+      
+      //begin: init layout
+      initLayout()
+      //end: init layout
+      
+      //begin: data conf.
+      var siteCount = 20,
+          baseWeight = 10,
+          outlierCount = siteCount/10,
+          outlierWeight = 3*baseWeight;
+      var data;
+      //end: data conf.
+      
+      //begin: Voronoï map conf.
+      var clippingPolygon = computeClippingPolygon();
+      var simulation;
+      //end: Voronoï map conf.
+      
+      function computeClippingPolygon() {
+        var circlingPolygon = [];
+        for (a=0; a<_2PI; a+=_2PI/60) {
+          circlingPolygon.push(
+            [radius + (radius-1)*Math.cos(a), radius + (radius-1)*Math.sin(a)]
+          )
+        }
+        
+      	return circlingPolygon;
+      };
+      
+      //begin: user interaction handlers
+      function arrangementUpdated(type) {
+        arrangementType = type;
+      };
+      
+      function cellsOrWeightsUpdated(type) {
+        drawCellsOrWeights = type;
+      };
+      
+      function siteVisibilityUpdated() {
+        drawSites = d3.select("#showSites").node().checked;
+      };
+      
+      function bgImgUpdated(newType) {
+        bgType = newType;
+        resetBackgroundImage() ;
+      };
+      //end: user interaction handlers
+      
+      function resetData() {
+        var weight;
+        
+        data = [];
+        for (i=0; i<siteCount; i++) {
+          weight = (0+1*sqr(Math.random()))*baseWeight;
+          // weight = (i+1)*baseWeight;	// +1: weights of 0 are not handled
+          // weight = i+1;	// +1: weights of 0 are not handled
+          data.push({
+            index: i,
+            weight: weight
+          });
+        }
+        for (i=0; i<outlierCount; i++) {
+	        data[i].weight = outlierWeight;
+        }
+      };
+      
+      function loop () {
+        resetData();
+        resetCanvas();
+        
+        if (arrangementType == "live") {
+          simulation = d3.voronoiMapSimulation(data)
+            .clip(clippingPolygon)
+            .on("tick", function() {
+              // function called after each iteration of computation
+              // called only in simulation mode, not in static mode
+              redraw(simulation.state().polygons);
+            })
+            .on("end", function() {
+              setTimeout(function(){
+                finalize(simulation.state().polygons, 20);
+              }, 50);
+            });
+        } else {
+          simulation = d3.voronoiMapSimulation(data)
+            .clip(clippingPolygon)
+          	.stop()	// immedialty interupts the simulation
+
+          var state = simulation.state();	// retrieve the simulation's state, i.e. {ended, polygons, iterationCount, convergenceRatio}
+
+          //begin: manually launch each iteration until the simulation ends
+          while (!state.ended) {
+            simulation.tick();
+            state = simulation.state();
+          }
+          //end:manually launch each iteration until the simulation ends
+
+          redraw(simulation.state().polygons);
+          setTimeout(loop, 1750);
+        }
+      }
+      
+      function finalize(polygons, countDown) {
+        //used to fade intermediate cells
+        redraw(polygons);
+        
+        if (countDown === 0) {
+          setTimeout(loop, 1750);
+        } else {
+          setTimeout(function(){
+            finalize(polygons, countDown-1);
+          }, 50);
+        }
+      }
+      
+      loop()
+      
+      /********************************/
+      /*      Drawing functions       */
+      /*   Playing with canvas :-)    */
+      /*                              */
+      /* Experiment to draw           */
+      /*   with a uniform color,      */
+      /*   or with a radial rainbow,  */
+      /*   or over a background image */
+      /*     (e.g. canonical rainbow) */
+			/********************************/
+      
+      function initLayout() {
+        d3.select("#layouter").style("width", totalWidth+"px").style("height", totalHeight+"px");
+        d3.selectAll("canvas").attr("width", width).attr("height", height);
+
+        bgImgCanvas = document.querySelector("canvas#background-image");
+        bgImgContext = bgImgCanvas.getContext("2d");
+        alphaCanvas = document.querySelector("canvas#alpha");
+        alphaContext = alphaCanvas.getContext("2d");
+        coloredCanvas = document.querySelector("canvas#colored");
+        coloredContext = coloredCanvas.getContext("2d");
+
+				//begin: set a radial rainbow
+        radialGradient = coloredContext.createRadialGradient(radius, radius, 0, radius, radius, radius);
+        var gradientStopNumber = 10,
+            stopDelta = 0.9/gradientStopNumber;
+            hueDelta = 360/gradientStopNumber,
+            stop = 0.1,
+            hue = 0;
+        while (hue<360) {
+          radialGradient.addColorStop(stop, d3.hsl(Math.abs(hue+160), 1, 0.45));
+          stop += stopDelta;
+          hue += hueDelta;
+        }
+        //end: set a radial rainbow
+        
+        //begin: set the background image
+        resetBackgroundImage();
+        //end:  set the initial background image
+      }
+      
+      function resetCanvas() {
+        alphaContext.clearRect(0, 0, width, height);
+      }
+      
+      function resetBackgroundImage() {
+        if (bgType==="canonicalRainbow") {
+          //begin: make conical rainbow gradient
+          var imageData = bgImgContext.getImageData(0, 0, 2*radius, 2*radius);
+          
+          var i = -radius,
+              j = -radius,
+              pixel = 0,
+              radToDeg = 180/Math.PI;
+          var aRad, aDeg, rgb;
+          while (i<radius) {
+            j = -radius;
+            while (j<radius) {
+              aRad = Math.atan2(j, i);
+              aDeg = aRad*radToDeg;
+              rgb = d3.hsl(aDeg, 1, 0.45).rgb();
+              
+              imageData.data[pixel++] = rgb.r;
+              imageData.data[pixel++] = rgb.g;
+              imageData.data[pixel++] = rgb.b;
+              imageData.data[pixel++] = 255;
+              
+              j++;
+            }
+            i++;
+          }
+          bgImgContext.putImageData(imageData, 0, 0);
+          //end: make conical rainbow gradient
+        } else if (bgType==="radialRainbow") {
+          bgImgContext.fillStyle = radialGradient;
+          bgImgContext.fillRect(0, 0, width, height);
+        } else {
+          bgImgContext.fillStyle = "grey";
+        	bgImgContext.fillRect(0, 0, width, height);
+        }
+      }
+
+      function redraw(polygons) {
+        // At each iteration:
+        //  1- update the 'alpha' canvas
+        //    1.1- fade 'alpha' canvas to simulate passing time
+        //    1.2- add the new tessellation/weights to the 'alpha' canvas
+        //  2- blend 'background-image' and 'alpha' => produces colorfull rendering
+        
+        alphaContext.lineWidth= 2;
+        
+        fade();
+        
+        alphaContext.beginPath();
+        //begin: add the new tessellation/weights (to the 'grey-scale' canvas)
+        if (drawCellsOrWeights==="cellsAndWeights") {
+          alphaContext.globalAlpha = 0.5;
+          polygons.forEach(function(polygon){
+            addCell(polygon);
+          });
+          alphaContext.globalAlpha = 0.2;
+          polygons.forEach(function(polygon){
+            addWeight(polygon.site);
+          });
+        } else if (drawCellsOrWeights==="cells") {
+          alphaContext.globalAlpha = 0.5;
+          polygons.forEach(function(polygon){
+            addCell(polygon);
+          });
+        } else {
+          alphaContext.globalAlpha = 0.2;
+          polygons.forEach(function(polygon){
+            addWeight(polygon.site);
+          });
+        }
+				//end: add the new tessellation/weights (to the 'grey-scale' canvas)
+        
+        if (drawSites) {
+          //begin: add sites (to the 'grey-scale' canvas)
+          alphaContext.globalAlpha = 1;
+          polygons.forEach(function(polygon){
+            addSite(polygon.site);
+          });
+          //end: add sites (to the 'grey-scale' canvas)
+        }
+        alphaContext.stroke();
+        
+        //begin: use 'background-image' to color pixels of the 'grey-scale' canvas
+        coloredContext.clearRect(0, 0, width, height);
+        coloredContext.globalCompositeOperation = "source-over";
+        coloredContext.drawImage(bgImgCanvas, 0, 0);
+				coloredContext.globalCompositeOperation = "destination-in";
+				coloredContext.drawImage(alphaCanvas, 0, 0);
+        //end: use 'background-image' to color pixels of the 'grey-scale' canvas
+      }
+      
+      function addCell(polygon) {
+        alphaContext.moveTo(polygon[0][0], polygon[0][1]);
+        polygon.slice(1).forEach(function(vertex){
+          alphaContext.lineTo(vertex[0], vertex[1]);
+        });
+        alphaContext.lineTo(polygon[0][0], polygon[0][1]);
+      }
+      
+      function addWeight(site) {
+        var radius = sqrt(site.weight);
+        alphaContext.moveTo(site.x+radius, site.y);
+        alphaContext.arc(site.x, site.y, radius, 0, _2PI);
+      }
+      
+      function addSite(site) {
+        alphaContext.moveTo(site.x, site.y);
+        alphaContext.arc(site.x, site.y, 1, 0, _2PI);
+        // alphaContext.fillText(Math.round(site.weight), site.x, site.y);
+      }
+      
+      function fade() {
+        var imageData = alphaContext.getImageData(0, 0, width, height);
+        for (var i = 3, l = imageData.data.length; i < l; i += 4) {
+          imageData.data[i] = Math.max(0, imageData.data[i] - 10);
+        }
+        alphaContext.putImageData(imageData, 0, 0);
+      }
+    </script>
+  </body>
+</html>
