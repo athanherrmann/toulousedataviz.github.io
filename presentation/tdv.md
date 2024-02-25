@@ -40,7 +40,8 @@ Association Toulouse DataViz (TDV)
 ## EVENEMENTS DATAVIZ
 
 Concours HACKAVIZ
-> Raconter une histoire <br/>avec des graphiques
+
+> Raconter une histoire avec des graphiques
 
 <img height="200" src="https://toulousedataviz.github.io/presentation/image/all_hackaviz.jpg" style="border:0;box-shadow:none"><br>
 
