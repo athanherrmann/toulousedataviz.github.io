@@ -40,9 +40,9 @@ Association Toulouse DataViz (TDV)
 ## EVENEMENTS DATAVIZ
 
 Concours HACKAVIZ
-<img height="200" src="https://toulousedataviz.github.io/presentation/image/all_hackaviz.jpg" style="border:0;box-shadow:none"><br>
-
 > Raconter une histoire <br/>avec des graphiques
+
+<img height="200" src="https://toulousedataviz.github.io/presentation/image/all_hackaviz.jpg" style="border:0;box-shadow:none"><br>
 
 ---
 
