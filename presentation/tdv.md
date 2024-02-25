@@ -50,7 +50,7 @@ Concours annuel HACKAVIZ
 Concours de dataviz depuis 2018
 
 <img height="200" src="https://toulousedataviz.github.io/presentation/image/all_hackaviz.jpg" style="border:0;box-shadow:none"><br>
-
+<img height="200" src="https://toulousedataviz.github.io/presentation/image/logo_hackaviz_site.jpg" style="border:0;box-shadow:none"><br>
 - Raconter une histoire avec des graphiques
 - Jeu de données open data original
 - Une création, en solo ou en équipe en 10 jours
@@ -60,7 +60,6 @@ Concours de dataviz depuis 2018
 
 ## HACKAVIZ
 
-<img height="200" src="https://toulousedataviz.github.io/presentation/image/logo_hackaviz_site.jpg" style="border:0;box-shadow:none"><br>
 - 2018 : 15 réalisations
 - 2019 : 24 réalisations
 - 2020 : 37 réalisations
