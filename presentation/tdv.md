@@ -66,7 +66,7 @@ Concours HACKAVIZ
 - Universités et entreprises
   > S'initier à l'analyse et <br/> à la visualisation de données
 - Collèges - Parcours Laïque et Citoyen du CD31
-  > Interventions auprès des collèges depuis 4ans (14 interventions - 350 collégiens)  
+  > Interventions auprès des collèges depuis 4 ans (14 interventions - 350 collégiens)  
 
 ---
 
@@ -83,9 +83,9 @@ Concours HACKAVIZ
 
 - Evénements (Présentations / Vidéos / photos)
 - Guide de la datavisualisation
-- Les newsletters
-- Des ressources (livres / sélections de dataviz)
-- Tous les liens pour nous retrouvez
+- Newsletters
+- Ressources (livres / sélections de dataviz)
+- Liens pour nous retrouvez
 
   > [toulouse-dataviz.fr](https://toulouse-dataviz.fr)
 
@@ -96,9 +96,9 @@ Concours HACKAVIZ
 
 - Création du meetup : oct 2015
 - Création de Toulouse DataViz : déc 2017
-- > 2000 membres meetup 
-- 69 meetup
-- 42 intervenants exterieurs
+- + de 2000 membres meetup
+- + de 500 clubistes
+- 69 meetup et 42 intervenants exterieurs
 - 7 Hackaviz 
 
 ---
