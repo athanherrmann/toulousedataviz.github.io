@@ -96,8 +96,8 @@ Concours HACKAVIZ
 
 - Création du meetup : oct 2015
 - Création de Toulouse DataViz : déc 2017
-- + de 2000 membres meetup
-- + de 500 clubistes
+- Plus de 2000 membres meetup
+- Plus de 500 clubistes
 - 69 meetup et 42 intervenants exterieurs
 - 7 Hackaviz 
 
