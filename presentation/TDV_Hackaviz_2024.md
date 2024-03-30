@@ -1,6 +1,6 @@
 ### Hackaviz Party 2024 
 
-<img width="150" src="https://toulousedataviz.github.io/presentation/image/Logo_TDV_5.jpg" style="border:0;box-shadow:none">
+<img width="300" src="https://toulousedataviz.github.io/presentation/image/image_hackaviz_2024.png" style="border:0;box-shadow:none">
 
 Association Toulouse DataViz (TDV)
 
@@ -64,6 +64,7 @@ Concours HACKAVIZ
 - 2021 : 27 réalisations
 - 2022 : 16 réalisations
 - 2023 : 13 réalisations
+- 2024 : 22 réalisations
 
 ---
 
