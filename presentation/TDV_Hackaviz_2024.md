@@ -1,4 +1,4 @@
-### Association Toulouse DataViz (TDV)
+### Hackaviz Party 2024 -Association Toulouse DataViz (TDV)
 
 <img width="150" src="https://toulousedataviz.github.io/presentation/image/Logo_TDV_5.jpg" style="border:0;box-shadow:none">
 
