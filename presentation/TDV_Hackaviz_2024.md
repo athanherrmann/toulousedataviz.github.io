@@ -4,7 +4,7 @@
 
 Association Toulouse DataViz (TDV)
 
-<small>[toulousedataviz.github.io/presentation/index_hackaviz_2024.html](https://toulousedataviz.github.io/presentation/index_hackaviz_2024.html)</small>
+<small>[toulousedataviz.github.io/presentation/](https://toulousedataviz.github.io/presentation/index.html)</small>
 
 ---
 
@@ -20,7 +20,7 @@ Association Toulouse DataViz (TDV)
 
 ## QUE FAISONS-NOUS ?
 
-- Rencontres
+- Meetup
 - Evénements dataviz
 - Sensibilisations
 - Newsletters 
@@ -28,11 +28,11 @@ Association Toulouse DataViz (TDV)
 
 ---
 
-## RENCONTRES
+## MEETUP
 
+- Rencontrer des acteurs de la dataviz
 - Comprendre la dataviz
-- Découvrir les réalisations
-- Témoigner
+- Découvrir des réalisations
 - S'approprier les outils (Ateliers)
 
 ---
@@ -49,7 +49,6 @@ Concours HACKAVIZ
 
 ## HACKAVIZ
 
-- Raconter une histoire avec des graphiques
 - Jeu de données open data original
 - Une création, en solo ou en équipe en 10 jours
 - Grande soirée de remise des prix : Hackaviz party
@@ -58,7 +57,7 @@ Concours HACKAVIZ
 
 ## HACKAVIZ
 
-<img width="300" src="https://toulousedataviz.github.io/presentation/image/hackaviz_2018-2024.jpg" style="border:0;box-shadow:none">
+<img width="600" src="https://toulousedataviz.github.io/presentation/image/hackaviz_2018-2024.jpg" style="border:0;box-shadow:none">
 
 ---
 
@@ -73,7 +72,7 @@ Concours HACKAVIZ
 
 ## OFFRE DE SERVICES
 
-- Initiation à la dataviz
+- Sensibilisation à la dataviz
 - Hackaviz sur mesure
 - Préparation de données
 - Réalisation de visualisation
@@ -97,10 +96,10 @@ Concours HACKAVIZ
 
 - Création du meetup : oct 2015
 - Création de Toulouse DataViz : déc 2017
-- 1953 membres meetup (sept 2023)
-- 66 meetup
-- 41 intervenants exterieurs
-- 6 Hackaviz depuis 2018
+- > 2000 membres meetup 
+- 69 meetup
+- 42 intervenants exterieurs
+- 7 Hackaviz 
 
 ---
 
@@ -129,7 +128,9 @@ On aime bien:
 ---
 ## REJOIGNEZ L'EQUIPE D'ANIMATION
 
-Rejoindre l'équipe d'animation de Toulouse Dataviz peut être une décision enrichissante à la fois sur le plan professionnel et personnel, vous permettant de développer vos compétences, de contribuer à la communauté et de vous impliquer dans un domaine qui vous passionne.
+- Une experience enrichissante à la fois sur le plan personnel et professionnel.
+- Une opportunité pour développer vos compétences.
+- La fierté d'appartenir à une communauté unique.
 
 ---
 
