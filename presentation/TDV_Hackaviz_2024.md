@@ -4,7 +4,7 @@
 
 Association Toulouse DataViz (TDV)
 
-<small>[toulousedataviz.github.io/presentation/](https://toulousedataviz.github.io/presentation/index_hackaviz_2024.html)</small>
+<small>[toulousedataviz.github.io/presentation/index_hackaviz_2024.html](https://toulousedataviz.github.io/presentation/index_hackaviz_2024.html)</small>
 
 ---
 
