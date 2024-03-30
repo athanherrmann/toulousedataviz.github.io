@@ -58,22 +58,16 @@ Concours HACKAVIZ
 
 ## HACKAVIZ
 
-- 2018 : 15 réalisations
-- 2019 : 24 réalisations
-- 2020 : 37 réalisations
-- 2021 : 27 réalisations
-- 2022 : 16 réalisations
-- 2023 : 13 réalisations
-- 2024 : 22 réalisations
+<img width="300" src="https://toulousedataviz.github.io/presentation/image/hackaviz_2018-2024.jpg" style="border:0;box-shadow:none">
 
 ---
 
 ## SENSIBILISATION
 
-- Collèges, lycées, universités et entreprises
+- Universités et entreprises
   > S'initier à l'analyse et <br/> à la visualisation de données
-- Parcours Laïque et Citoyen du CD31
-  > Interventions auprès des collèges depuis 3ans (10 interventions - 250 collégiens)  
+- Collèges - Parcours Laïque et Citoyen du CD31
+  > Interventions auprès des collèges depuis 4ans (14 interventions - 350 collégiens)  
 
 ---
 
@@ -86,6 +80,18 @@ Concours HACKAVIZ
   > [Nos offres](https://toulouse-dataviz.fr/offres)
 
 ---
+## UN SITE INTERNET 
+
+- Evénements (Présentations / Vidéos / photos)
+- Guide de la datavisualisation
+- Les newsletters
+- Des ressources (livres / sélections de dataviz)
+- Tous les liens pour nous retrouvez
+
+  > [toulouse-dataviz.fr](https://toulouse-dataviz.fr)
+
+---
+
 
 ## QUELQUES CHIFFRES
 
@@ -105,8 +111,9 @@ On aime bien:
 - JavaScript, ObservableHQ,  D3.js
 - Python, Jupyter
 - R
-- QGIS, Leaflet
+- QGIS
 - Excel, Tableau
+- Illustrator, inkspace
 - et pleins d'autres...
 
 ---
@@ -120,8 +127,13 @@ On aime bien:
   > C'est gratuit, [inscrivez-vous ](https://toulouse-dataviz.us20.list-manage.com/subscribe?u=6d06abd4e903b49060d162a89&id=31bc433cb4)
 
 ---
+## REJOIGNEZ L'EQUIPE D'ANIMATION
 
-## NOS SPONSORS
+Rejoindre l'équipe d'animation de Toulouse Dataviz peut être une décision enrichissante à la fois sur le plan professionnel et personnel, vous permettant de développer vos compétences, de contribuer à la communauté et de vous impliquer dans un domaine qui vous passionne.
+
+---
+
+## UN GRAND MERCI A NOS SPONSORS
 
 [<img height="65" src="https://toulousedataviz.github.io/presentation/image/clever-logo-et-baseline-DIAMANT.jpg" style="border:0;box-shadow:none">](https://www.clever-age.com/fr/)
 [<img height="65" src="https://toulousedataviz.github.io/presentation/image/vectorInformatikGmbH_logo.svg" style="border:0;box-shadow:none">](https://www.vector.com/fr/fr/)
