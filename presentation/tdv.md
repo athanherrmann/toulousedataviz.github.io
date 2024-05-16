@@ -1,6 +1,6 @@
-### Hackaviz Party 2024 
+###  
 
-<img width="300" src="https://toulousedataviz.github.io/presentation/image/image_hackaviz_2024.png" style="border:0;box-shadow:none">
+<img width="300" src="https://toulousedataviz.github.io/presentation/image/Logo_TDV_4.png" style="border:0;box-shadow:none">
 
 Association Toulouse DataViz (TDV)
 
