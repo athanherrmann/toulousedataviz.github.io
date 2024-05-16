@@ -1,8 +1,7 @@
-###  
+###  Association Toulouse DataViz (TDV)
 
 <img width="300" src="https://toulousedataviz.github.io/presentation/image/Logo_TDV_4.png" style="border:0;box-shadow:none">
 
-Association Toulouse DataViz (TDV)
 
 <small>[toulousedataviz.github.io/presentation/](https://toulousedataviz.github.io/presentation/index.html)</small>
 
