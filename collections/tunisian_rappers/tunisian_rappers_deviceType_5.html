@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>tunisian rappers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="tunisian rappers">
+<script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+</head>
+<body>
+ 
+<div id="content"></div>
+
+<script>
+ function detectDeviceType() {
+    const ua = navigator.userAgent;
+
+    if (/Mobi|Android/i.test(ua)) {
+      return 'mobile';
+    } else if (/iPad|Tablet|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+      return 'tablet';
+    } else {
+      return 'desktop';
+    }
+  }
+  function loadContent() {
+    var contentDiv = document.getElementById('content');
+    var deviceType = detectDeviceType();
+
+    if (deviceType === 'mobile' || deviceType === 'tablet') {
+      contentDiv.innerHTML = `
+        <div class="container-fluid">
+      <iframe width="100%" height="1418" frameborder="0" src="https://observablehq.com/embed/@tdvz/rappers-in-tunisia-mob@3194?cells=html1%2Cviewof+select%2Cvignette%2Chtml2"></iframe>
+      `;
+    } else {
+      contentDiv.innerHTML = `
+        <div class="container-fluid">
+          <div id="observablehq-html1-74d1b2c7"></div>
+          <div class="row">
+            <div id="observablehq-html2-74d1b2c7" class="col-md-4"></div>
+            <div id="observablehq-chart-74d1b2c7" class="col-md-8"></div>
+          </div>
+        </div>
+        
+      `;
+
+      // Add script tags to the document
+      var script = document.createElement('script');
+      script.type = 'module';
+      script.innerHTML = `
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/@tdvz/rappers-in-tunisia-attempt-pc.js?v=4";
+        new Runtime().module(define, name => {
+          if (name === "html1") return new Inspector(document.querySelector("#observablehq-html1-74d1b2c7"));
+          if (name === "html2") return new Inspector(document.querySelector("#observablehq-html2-74d1b2c7"));
+          if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-74d1b2c7"));
+        });
+      `;
+      document.body.appendChild(script);
+    }
+  }
+
+  loadContent();
+</script>
+
+</body>
+</html>
+
